@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up — Stalone Invest</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .signup-container {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 100px 20px 40px;
+      background: linear-gradient(rgba(0, 0, 30, 0.8), rgba(0, 0, 30, 0.8)),
+        url("pix1.jpg") no-repeat center/cover;
+    }
+
+    .signup-form-container {
+      background-color: #111;
+      padding: 40px;
+      border-radius: 15px;
+      width: 100%;
+      max-width: 450px;
+      border: 1px solid #00aaff;
+      box-shadow: 0 8px 32px rgba(0, 170, 255, 0.2);
+      animation: fadeIn 0.8s ease;
+    }
+
+    .signup-form-container h2 {
+      color: #00aaff;
+      text-align: center;
+      margin-bottom: 10px;
+      font-size: 2rem;
+    }
+
+    .signup-form-container p {
+      text-align: center;
+      color: #ccc;
+      margin-bottom: 30px;
+      font-size: 0.95rem;
+    }
+
+    .signup-form-container form {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      background: transparent;
+    }
+
+    .signup-form-container label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+      color: #d3d3d3;
+    }
+
+    .signup-form-container input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #333;
+      border-radius: 6px;
+      background-color: #222;
+      color: #fff;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+    }
+
+    .signup-form-container input:focus {
+      outline: none;
+      border-color: #00aaff;
+      box-shadow: 0 0 0 2px rgba(0, 170, 255, 0.2);
+    }
+
+    .signup-form-container .btn {
+      width: 100%;
+      padding: 14px;
+      margin-top: 10px;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .login-link {
+      text-align: center;
+      margin-top: 25px;
+      color: #ccc;
+      font-size: 0.9rem;
+    }
+
+    .login-link a {
+      color: #00aaff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+      background: transparent;
+      padding: 0;
+      margin: 0;
+      border-radius: 0;
+    }
+
+    .login-link a:hover {
+      color: #0077cc;
+      text-decoration: underline;
+    }
+
+    .password-requirements {
+      font-size: 0.8rem;
+      color: #888;
+      margin-top: -15px;
+      margin-bottom: 15px;
+    }
+
+    @media (max-width: 600px) {
+      .signup-form-container {
+        padding: 30px 20px;
+      }
+
+      .signup-form-container h2 {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>
+      <img src="logo.jpg" id="logo">
+      Stalone Invest
+    </h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="index.html#plans">Plans</a>
+      <a href="index.html#invest">Invest</a>
+      <a href="index.html#withdraw">Withdraw</a>
+    </nav>
+  </header>
+
+  <div class="signup-container">
+    <div class="signup-form-container">
+      <h2>Create Your Account</h2>
+      <p>Join Stalone Invest and start growing your wealth today</p>
+      
+      <form id="signupForm">
+        <label for="fullName">Full Name</label>
+        <input type="text" id="fullName" name="fullName" required placeholder="Enter your full name">
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required placeholder="Enter your email">
+
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required placeholder="Create a password" minlength="8">
+        <div class="password-requirements">Password must be at least 8 characters long</div>
+
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required placeholder="Confirm your password">
+
+        <button type="submit" class="btn">Sign Up</button>
+      </form>
+
+      <div class="login-link">
+        Already have an account? <a href="login.html">Log in here</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const signupForm = document.getElementById('signupForm');
+
+    signupForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const password = document.getElementById('password').value;
+      const confirmPassword = document.getElementById('confirmPassword').value;
+      const fullName = document.getElementById('fullName').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+
+      // Validate password match
+      if (password !== confirmPassword) {
+        alert('Passwords do not match! Please try again.');
+        document.getElementById('confirmPassword').focus();
+        return;
+      }
+
+      // Validate password length
+      if (password.length < 8) {
+        alert('Password must be at least 8 characters long!');
+        document.getElementById('password').focus();
+        return;
+      }
+
+      // Store user data (in a real application, this would be sent to a server)
+      const userData = {
+        fullName: fullName,
+        email: email,
+        phone: phone,
+        password: password, // In production, this should be hashed
+        signupDate: new Date().toISOString()
+      };
+
+      // Save to localStorage (for demo purposes)
+      localStorage.setItem('user_' + email, JSON.stringify(userData));
+      localStorage.setItem('currentUser', email);
+
+      // Success message and redirect
+      alert('Account created successfully! Welcome to Stalone Invest.');
+      window.location.href = 'index.html';
+    });
+
+    // Real-time password match validation
+    document.getElementById('confirmPassword').addEventListener('input', function() {
+      const password = document.getElementById('password').value;
+      const confirmPassword = this.value;
+
+      if (confirmPassword && password !== confirmPassword) {
+        this.style.borderColor = '#ff4444';
+      } else {
+        this.style.borderColor = '#333';
+      }
+    });
+  </script>
+</body>
+</html>
+
+

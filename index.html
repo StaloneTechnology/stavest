@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Stalone Invest — Grow Your Wealth</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <!-- Terms and Conditions Modal -->
+  <div id="termsModal" class="terms-modal">
+    <div class="terms-modal-content">
+      <h2>Terms and Conditions</h2>
+      <div class="terms-body">
+        <p>Welcome to Stalone Invest. Please read and agree to our terms and conditions before using our platform.</p>
+        
+        <h3>1. Investment Platform Disclaimer</h3>
+        <p>Stalone Invest is an investment platform. You understand and acknowledge that:</p>
+        <ul>
+          <li>You CAN WIN profits on your investments</li>
+          <li>You can have some drawdown in your invested capital</li>
+          <li>Investment outcomes are not guaranteed</li>
+          <li>All investment decisions carry inherent risk</li>
+        </ul>
+        
+        <h3>2. Personal Responsibility and Freewill</h3>
+        <p>I hereby declare that I am investing in Stalone Invest of my own freewill, with full understanding of the risks involved. No matter the outcome of my investments, whether positive or negative, I take full responsibility for my decision to invest. I understand that Stalone Invest is not liable for any losses incurred as a result of market conditions, market movements, or other external factors beyond the platform's control.</p>
+        
+        <h3>3. Risk Management and Drawdown Policy</h3>
+        <p>In the event that an investment account experiences a drawdown of 60%, Stalone Invest will return 40% of the original investment capital. This is the extent of capital protection offered. Any losses beyond this threshold remain the investor's responsibility.</p>
+        
+        <h3>4. Full Assumption of Risk</h3>
+        <p>I hereby state that I invested in Stalone Invest at my own risk. I understand the volatile nature of investments and the possibility of total loss. I take full responsibility for any and all outcomes of my investments with Stalone Invest. Stalone Invest and its operators cannot be held accountable for investment losses, market downturns, or any negative financial outcomes resulting from my investment decisions.</p>
+        
+        <h3>5. Acknowledgment of Terms</h3>
+        <p>By clicking "I Agree" below, I confirm that:</p>
+        <ul>
+          <li>I have read and understood these terms and conditions</li>
+          <li>I acknowledge the risks involved in investing</li>
+          <li>I am investing of my own freewill and sound judgment</li>
+          <li>I take full responsibility for my investment decisions and their outcomes</li>
+          <li>I release Stalone Invest from any liability for investment losses</li>
+        </ul>
+      </div>
+      <div class="terms-buttons">
+        <button id="agreeBtn" class="btn terms-agree">I Agree</button>
+        <button id="declineBtn" class="btn terms-decline">I Decline</button>
+      </div>
+    </div>
+  </div>
+
+  <header>
+   <h1> <img src="logo.jpg" id="logo">
+    Stalone Invest</h1>
+    <button class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav class="nav-menu">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#invest">Invest</a>
+      <a href="#" id="adminLoginLink" onclick="showAdminLogin()">Admin</a>
+
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h2>Grow Your Wealth with Confidence</h2>
+      <p>Join thousands of investors earning monthly profits with Stalone Invest. Your money works for you, securely and transparently.</p>
+      <button class="btn" onclick="document.getElementById('invest').scrollIntoView({ behavior: 'smooth' });">Get Started</button>
+    </div>
+    
+    </section>
+ 
+  <div id="announcementDisplay" class="announcement-banner">
+    <!-- Announcements will be displayed here -->
+  </div>
+
+  <div id="numberDisplay" class="number-display-box">
+    <!-- Numbers will be displayed here -->
+  </div>
+
+<div class="hero-section">
+  <video class="background-video" autoplay muted loop>
+    <source src="market2.mp4" type="video/mp4">
+  </video>
+</div>
+  <section class="form-section" id="invest">
+    <h2>Make an Investment</h2>
+    <form id="paymentForm">
+      <label>Full Name</label>
+      <input type="text" id="name" required>
+
+      <label>Email</label>
+      <input type="email" id="email" required>
+
+      <label>Phone Number</label>
+      <input type="tel" id="phone" required>
+
+      <label>Account Name</label>
+      <input type="text" id="accountName" required>
+
+      <label>Account Number</label>
+      <input type="text" id="accountNumber" required>
+
+      <label>Bank Name</label>
+      <input type="text" id="bankName" required>
+
+      <label>Amount (₦)</label>
+      <input type="number" id="amount" value="30000" readonly required>
+
+      <button type="submit" class="btn">Invest Now</button>
+    </form>
+  </section>
+
+  <!-- About Section -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <h2>About Stalone Invest</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <p>Stalone Invest is Nigeria's leading investment platform, dedicated to helping individuals grow their wealth through smart, secure investment opportunities. Founded in 2023, we have helped thousands of investors achieve financial freedom.</p>
+          <p>Our platform combines cutting-edge technology with expert financial analysis to provide you with the best investment opportunities in the market. We prioritize security, transparency, and customer satisfaction above all else.</p>
+          
+          <h3>Why Choose Stalone Invest?</h3>
+          <ul class="why-choose-list">
+            <li>✅ Licensed and regulated investment platform</li>
+            <li>✅ Bank-level security with SSL encryption</li>
+            <li>✅ Transparent fee structure with no hidden charges</li>
+            <li>✅ Professional fund management team</li>
+            <li>✅ 24/7 customer support</li>
+            <li>✅ Monthly profit distributions</li>
+            <li>✅ Risk management policies in place</li>
+            <li>✅ Easy online investment process</li>
+          </ul>
+          
+          <div class="trust-indicators">
+            <div class="indicator">
+              <h4>🔒 Secure Platform</h4>
+              <p>Bank-level security with SSL encryption</p>
+            </div>
+            <div class="indicator">
+              <h4>📊 Transparent</h4>
+              <p>Real-time reporting and updates</p>
+            </div>
+            <div class="indicator">
+              <h4>🎯 Expert Management</h4>
+              <p>Professional fund managers</p>
+            </div>
+          </div>
+        </div>
+        <div class="stats">
+          <div class="stat">
+            <h3>₦5.5M+</h3>
+            <p>Total Invested</p>
+          </div>
+          <div class="stat">
+            <h3>5,000+</h3>
+            <p>Happy Investors</p>
+          </div>
+          <div class="stat">
+            <h3>85%</h3>
+            <p>Success Rate</p>
+          </div>
+          <div class="stat">
+            <h3>3 Years</h3>
+            <p>Experience</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="admin-dashboard" id="admin" style="display: none;">
+    <h2>Admin Dashboard</h2>
+    <div class="admin-container">
+      <div class="admin-controls">
+        <h3>Number Display Settings</h3>
+        <div class="control-group">
+          <label>Content to Display:</label>
+          <input type="text" id="adminNumberDisplay" placeholder="Enter number or text to display">
+          <button id="updateNumber" class="btn admin-btn">Update Display</button>
+        </div>
+
+        <div class="admin-buttons">
+          <button id="logoutBtn" class="btn admin-btn danger">Logout</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Admin Login Modal -->
+  <div id="adminModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Admin Login</h2>
+      <form id="adminLoginForm">
+        <label>Username:</label>
+        <input type="text" id="adminUsername" required>
+
+        <label>Password:</label>
+        <input type="password" id="adminPassword" required>
+
+        <button type="submit" class="btn">Login</button>
+      </form>
+      <div id="loginError" class="error-message" style="display: none;"></div>
+    </div>
+  </div>
+
+  <!-- Admin Access Button (only visible to logged-in admins) -->
+  <div id="adminAccessBtn" class="admin-access-btn" style="display: none;">
+    <button id="toggleAdmin" class="btn admin-toggle">⚙️ Admin Panel</button>
+  </div>
+
+  <footer>
+    <a href="http://www.gmail.com"><img src="email.jpg" id="icon"></a>
+    <a href="https://www.facebook.com/profile.php?id=100091333883101"><img src="fb.jpg" id="icon"></a>
+    <a href="https://wa.me/message/WH7RYFIZSVYIN1"><img src="whatsapp.jpg" id="icon"></a>
+
+    <p> Stalone Invest. Secure Wealth Growth for Everyone</p>
+  </footer>
+
+  <!-- Paystack Script -->
+  <script src="https://js.paystack.co/v1/inline.js"></script>
+  <script src="index.js"></script>
+  </body>
+  </html>
+  
